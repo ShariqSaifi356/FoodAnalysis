@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 90px;
+    font-family: 'Oleo Script Swash Caps';
+    text-align: left;
+    color:black;
+    padding-top: 100px;
+    text-decoration-style: solid;
+}
+
+body{
+    background-color:rgb(178, 204, 230);
+    border: white 5px;
+    border-style: solid;
+} 
+
+.card{
+    align-items: center;
+    border-style: hidden;
+}
+
+.nav{
+    background-color:cornflowerblue;
+} 
+
+.bttn{
+    font-family: 'Oswald';
+    width: 15rem;
+    height: 3rem;
+}
+
+.card-text1{
+    font-family: 'Macondo';
+    font-size: 35px;
+}
+
+.ded{
+    border: white 5px;
+    border-style: solid;
+}
+
+.right{
+    align-self:auto;
+
+}
