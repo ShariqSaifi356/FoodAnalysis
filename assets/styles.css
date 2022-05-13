@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
  
 * {
     margin: 0;
@@ -10,7 +11,7 @@
 .title {
     font-size: 90px;
     font-family: 'Oleo Script Swash Caps';
-    text-align: left;
+    text-align: center;
     color:black;
     padding-top: 100px;
     text-decoration-style: solid;
@@ -33,21 +34,24 @@ body{
 
 .bttn{
     font-family: 'Oswald';
-    width: 15rem;
-    height: 3rem;
+    
 }
 
 .card-text1{
-    font-family: 'Macondo';
-    font-size: 35px;
+    font-family: 'Lora';
+    font-size: 30px;
+    text-align: center;
+    font-style: italic;
 }
 
-.ded{
-    border: white 5px;
-    border-style: solid;
+.card-text{
+    font-family: 'Montserrat';
+    font-size: 18px;
+    text-decoration: solid;
 }
 
-.right{
-    align-self:auto;
-
+.card-title{
+    font-family: 'Oleo Script Swash Caps';
+    font-size: 25px;
+    text-decoration: solid;
 }
