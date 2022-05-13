@@ -1,6 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
+import page2
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -58,14 +59,15 @@ navbar = dbc.Navbar([
             is_open=False,
             navbar=True)
     ])
-], color="light", className="fixed-top")
+], color="dodgerblue", className="fixed-top")
 
 card_img = dbc.Container([
     dbc.Card([
         dbc.CardImg(
             src="/static/images/ooter.jpg",
             top=True,
-            style={"opacity": 0.3},
+            style={"opacity": 0.2},
+            className='shadow'
         ),
         dbc.CardImgOverlay(
             dbc.CardBody([
@@ -78,7 +80,7 @@ card_img = dbc.Container([
                 ], className="card-text1"),
             ])
         )
-    ])
+    ], className='shadow')
 ], className="pt-5")
 
 cards = html.Div([
@@ -88,7 +90,8 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/analysis.jpg",
                     top=True,
-                    style={"opacity": 0.4},
+                    style={"opacity": 0.4, "border":'rgb(245, 140, 101) solid 2px'},
+                    className='shadow'
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -108,7 +111,8 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/info.png",
                     top=True,
-                    style={"opacity": 0.4},
+                    style={"opacity": 0.4, "border":'rgb(27, 30, 205) solid 2px'},
+                    className='shadow'
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -128,7 +132,8 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/access.jpg",
                     top=True,
-                    style={"opacity": 0.4},
+                    style={"opacity": 0.4, "border":'rgb(97, 230, 230) solid 2px'},
+                    className='shadow'
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -148,7 +153,7 @@ cards = html.Div([
 footer = html.Footer([
     html.Div([
         html.H5("Copyright")
-    ], className="footer-copyright text-center pt-3 pb-1")],
+    ], className="footer-copyright text-center pt-2 pb-1 shadow")],
     className="page-footer font-small blue down mt-5",
     style={"background-color": "white", "color": "dodgerblue"},
 )
@@ -159,7 +164,82 @@ btn = html.Div([
 ], className = "bttn") 
 ], className="text-center")
 
-app.layout = html.Div([navbar, card_img, cards, html.Br(), btn, footer], className="pt-5")
+card = html.Div([
+    dbc.Col([
+        dbc.Card([
+            dbc.CardImg(
+                src="/static/images/bar.jpg",
+                top=True,
+                className='shadow'
+            ),
+            dbc.CardBody(
+                html.P([
+                    "BAR CHARTS"
+                ], className="text1")
+            )
+        ], style={"width": "18rem", "height": "18rem"})
+    ], width="auto"),
+
+    dbc.Col([
+        dbc.Card([
+            dbc.CardImg(
+                src="/static/images/scatter2.png",
+                top=True,
+                className='shadow'
+            ),
+            dbc.CardBody(
+                html.P([
+                    "SCATTER CHARTS"
+                ], className="text1")
+            )
+        ], style={"width": "18rem", "height": "18rem"})
+    ], width="auto"),
+], className='row')
+
+card2 = dbc.Row([
+    dbc.Col([
+        dbc.Card([
+            dbc.CardImg(
+                src="/static/images/pie.png",
+                top=True,
+                className='shadow'
+            ),
+            dbc.CardBody(
+                html.P([
+                    "PIE CHART"
+                ], className="text1")
+            )
+        ], style={"width": "18rem", "height": "18rem"})
+    ], width="auto"),
+
+    dbc.Col([
+        dbc.Card([
+            dbc.CardImg(
+                src="/static/images/line.png",
+                top=True,
+                className='shadow'
+            ),
+            dbc.CardBody(
+                html.P([
+                    "LINE CHART"
+                ], className="text1")
+            )
+        ], style={"width": "18rem", "height": "18rem"})
+    ], width="auto")
+], className='text-center')
+
+app.layout = html.Div([
+    navbar, 
+    card_img, 
+    cards, 
+    html.Br(), 
+    btn, 
+    footer, 
+    html.Br(), 
+    card, 
+    html.Br(), 
+    card2
+], className="pt-5")
 
 @app.callback(
     Output("navbar-collapse", "is_open"),
