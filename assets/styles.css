@@ -21,7 +21,7 @@
 }
 
 body{
-    background-color:rgb(178, 204, 230);
+    background-color:rgba(178, 204, 230, 0.988);
     border: white 5px;
     border-style: solid;
 } 
@@ -45,23 +45,23 @@ body{
 }
 
 .card-text1{
-    font-family: 'Lora';
+    font-family: 'Roboto';
     font-size: 30px;
     text-align: center;
-    font-style: italic;
+    font-style: solid;
     box-shadow: 10in;
 }
 
 .card-text{
     font-family: 'Montserrat';
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: solid;
     box-shadow: 10in;
 }
 
 .card-title{
     font-family: 'Oleo Script Swash Caps';
-    font-size: 25px;
+    font-size: 30px;
     text-decoration: solid;
     box-shadow: 10in;
 }
@@ -82,5 +82,5 @@ body{
 }
 
 .shadow{
-    box-shadow: 10in;
+    box-shadow: 10px 10px;
 }

@@ -1,7 +1,6 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
-import page2
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -67,7 +66,6 @@ card_img = dbc.Container([
             src="/static/images/ooter.jpg",
             top=True,
             style={"opacity": 0.2},
-            className='shadow'
         ),
         dbc.CardImgOverlay(
             dbc.CardBody([
@@ -90,8 +88,7 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/analysis.jpg",
                     top=True,
-                    style={"opacity": 0.4, "border":'rgb(245, 140, 101) solid 2px'},
-                    className='shadow'
+                    style={"opacity": 0.3},
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -103,7 +100,7 @@ cards = html.Div([
                         ], className="card-text"),
                     ]),
                 )
-            ]),
+            ], className='shadow'),
         ], className="col-4 mb-4" ),
                 
         html.Div([
@@ -111,8 +108,7 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/info.png",
                     top=True,
-                    style={"opacity": 0.4, "border":'rgb(27, 30, 205) solid 2px'},
-                    className='shadow'
+                    style={"opacity": 0.3},
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -124,7 +120,7 @@ cards = html.Div([
                         ], className="card-text"),
                     ]),
                 )
-            ]),
+            ], className='shadow'),
         ], className="col-4 mb-4" ),
 
         html.Div([
@@ -132,8 +128,7 @@ cards = html.Div([
                 dbc.CardImg(
                     src="/static/images/access.jpg",
                     top=True,
-                    style={"opacity": 0.4, "border":'rgb(97, 230, 230) solid 2px'},
-                    className='shadow'
+                    style={"opacity": 0.3},
                 ),
                 dbc.CardImgOverlay(
                     dbc.CardBody([
@@ -145,7 +140,7 @@ cards = html.Div([
                         ], className="card-text"),
                     ]),
                 )
-            ]),
+            ], className='shadow'),
         ], className="col-4 mb-4" )
     ], className="row"),
 ], className="container", style={"margin-top": "5rem"})
@@ -161,84 +156,93 @@ footer = html.Footer([
 btn = html.Div([
     dbc.Button([
        "EXPLORE MORE"
-], className = "bttn") 
+], className = "bttn shadow") 
 ], className="text-center")
 
-card = html.Div([
-    dbc.Col([
-        dbc.Card([
-            dbc.CardImg(
-                src="/static/images/bar.jpg",
-                top=True,
-                className='shadow'
-            ),
-            dbc.CardBody(
-                html.P([
-                    "BAR CHARTS"
-                ], className="text1")
-            )
-        ], style={"width": "18rem", "height": "18rem"})
-    ], width="auto"),
+card = html.Div([dbc.Container([
+    html.Div([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardImg(
+                    src="/static/images/line2.jpg",
+                    top=True,
+                ),
+                dbc.CardBody([
+                        html.P([
+                            "LINE CHART"
+                        ], className="text1"),
+                    ]),
+                ], style={"width": "25rem", "height": "20rem"}, className='shadow'),
+            ],  width="auto"),
 
-    dbc.Col([
-        dbc.Card([
-            dbc.CardImg(
-                src="/static/images/scatter2.png",
-                top=True,
-                className='shadow'
-            ),
-            dbc.CardBody(
-                html.P([
-                    "SCATTER CHARTS"
-                ], className="text1")
-            )
-        ], style={"width": "18rem", "height": "18rem"})
-    ], width="auto"),
-], className='row')
+        dbc.Col([
+            dbc.Card([
+                dbc.CardImg(
+                    src="/static/images/bar.jpg",
+                    top=True,
+                ),
+                dbc.CardBody([
+                        html.P([
+                            "BAR CHART"
+                        ], className="text1"),
+                    ]),
+                ], style={"width": "25rem", "height": "20rem"}, className='shadow'),
+            ],  width="auto"),
+    ], className="row set"),
+]),
+html.Br(),
 
-card2 = dbc.Row([
-    dbc.Col([
-        dbc.Card([
-            dbc.CardImg(
-                src="/static/images/pie.png",
-                top=True,
-                className='shadow'
-            ),
-            dbc.CardBody(
-                html.P([
-                    "PIE CHART"
-                ], className="text1")
-            )
-        ], style={"width": "18rem", "height": "18rem"})
-    ], width="auto"),
+dbc.Container([
+    html.Div([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardImg(
+                    src="/static/images/line2.jpg",
+                    top=True,
+                    className='shadow'
+                ),
+                dbc.CardBody([
+                        html.P([
+                            "LINE CHART"
+                        ], className="text1"),
+                    ]),
+                ], style={"width": "25rem", "height": "20rem"}),
+            ],  width="auto"),
 
-    dbc.Col([
-        dbc.Card([
-            dbc.CardImg(
-                src="/static/images/line.png",
-                top=True,
-                className='shadow'
-            ),
-            dbc.CardBody(
-                html.P([
-                    "LINE CHART"
-                ], className="text1")
-            )
-        ], style={"width": "18rem", "height": "18rem"})
-    ], width="auto")
+        dbc.Col([
+            dbc.Card([
+                dbc.CardImg(
+                    src="/static/images/bar.jpg",
+                    top=True,
+                    className='shadow'
+                ),
+                dbc.CardBody([
+                        html.P([
+                            "BAR CHART"
+                        ], className="text1"),
+                    ]),
+                ], style={"width": "25rem", "height": "20rem"}),
+            ],  width="auto"),
+    ], className="row"),
+])
 ], className='text-center')
+
+head=dbc.Container([
+    "CHART TITLE"
+], className='text1')
 
 app.layout = html.Div([
     navbar, 
+    html.Br(), 
     card_img, 
     cards, 
     html.Br(), 
     btn, 
     footer, 
     html.Br(), 
-    card, 
+    card,
     html.Br(), 
-    card2
+    head
 ], className="pt-5")
 
 @app.callback(
